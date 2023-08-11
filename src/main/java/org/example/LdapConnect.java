@@ -4,6 +4,7 @@ import javax.naming.*;
 import javax.naming.directory.*;
 import java.util.Hashtable;
 import javax.naming.ldap.LdapName;
+//import com.novell.*;
 
 public class LdapConnect {
 
@@ -20,20 +21,20 @@ public class LdapConnect {
             DirContext ctx = new InitialDirContext(env);
             // 创建数据属性
 
-            for (int i = 0; i < 100; i++) {
-                BasicAttributes attrs = new BasicAttributes();
-                attrs.put("objectClass", "inetOrgPerson");
-                attrs.put("ou", "auto");
-                attrs.put("cn", "lee");
-                attrs.put("sn", String.valueOf(i));
-                attrs.put("uid", "001002003" + i);
-                attrs.put("telephoneNumber","1389828765"+i);
-// 创建目标DN
-                LdapName dn = new LdapName("uid=" + "001002003" + i + ",dc=yang,dc=com");
-
-// 将数据绑定到目标DN
-                ctx.bind(dn, null, attrs);
-            }
+//            for (int i = 0; i < 100; i++) {
+//                BasicAttributes attrs = new BasicAttributes();
+//                attrs.put("objectClass", "inetOrgPerson");
+//                attrs.put("ou", "auto");
+//                attrs.put("cn", "lee");
+//                attrs.put("sn", String.valueOf(i));
+//                attrs.put("uid", "001002003" + i);
+//                attrs.put("telephoneNumber","1389828765"+i);
+//// 创建目标DN
+//                LdapName dn = new LdapName("uid=" + "001002003" + i + ",dc=yang,dc=com");
+//
+//// 将数据绑定到目标DN
+//                ctx.bind(dn, null, attrs);
+//            }
 
 
         } catch (NamingException ne) {
